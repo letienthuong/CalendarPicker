@@ -27,3 +27,5 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+.idea

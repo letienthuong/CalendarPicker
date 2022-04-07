@@ -10,8 +10,8 @@ import YearSelector from './YearSelector';
 import Scroller from './Scroller';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import moment from 'moment';
-import 'moment/locale/vi';
 import StaticRange from 'src/components/DateRangePicker/StaticRange';
+import 'moment/locale/vi';
 
 moment.locale('vi');
 
@@ -50,7 +50,7 @@ export default class CalendarPicker extends Component {
     customDatesStyles: [],
     previousTitle: 'Trước',
     nextTitle: 'Tiếp',
-    selectMonthTitle: 'Chọn tháng trong ',
+    selectMonthTitle: 'Chọn tháng trong năm ',
     selectYearTitle: 'Chọn năm',
     horizontal: true,
     selectedDayStyle: null,
@@ -64,7 +64,7 @@ export default class CalendarPicker extends Component {
 
     if (moment(selectedStartDate).isValid() && moment(selectedEndDate).isValid()) {
       this.handleOnSelectMonthYear({
-        month: parseInt(moment(selectedStartDate).format('M')) - 1,
+        month: parseInt(moment(selectedStartDate).format('M')),
         year: parseInt(moment(selectedEndDate).format('YYYY')),
       });
     }
@@ -234,17 +234,11 @@ export default class CalendarPicker extends Component {
   };
 
   handleOnPressDay = ({ year, month, day }) => {
-    const {
-      selectedStartDate: prevSelectedStartDate,
-      selectedEndDate: prevSelectedEndDate,
-    } = this.state;
+    const { selectedStartDate: prevSelectedStartDate, selectedEndDate: prevSelectedEndDate } =
+      this.state;
 
-    const {
-      allowRangeSelection,
-      allowBackwardRangeSelect,
-      enableDateChange,
-      onDateChange,
-    } = this.props;
+    const { allowRangeSelection, allowBackwardRangeSelect, enableDateChange, onDateChange } =
+      this.props;
 
     if (!enableDateChange) {
       return;

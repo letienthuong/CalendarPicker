@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { getStaticRanges } from 'src/components/DateRangePicker/utils';
-import { colors } from 'src/styles';
+import { getStaticRanges } from './utils';
 
 function StaticPicker({ firstDate, secondDate, onPressStaticButton }) {
   const onPress = (range) => {
@@ -36,6 +35,10 @@ const styles = StyleSheet.create({
   staticRange: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: 'rgba(0,0,0,0.2)',
+    borderBottomWidth: 1,
   },
   staticButton: {
     borderWidth: 0.2,
@@ -48,9 +51,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   active: {
-    backgroundColor: colors.primary,
+    backgroundColor: '#00918c',
   },
   activeText: {
-    color: colors.white,
+    color: '#fff',
   },
 });

@@ -15,15 +15,15 @@ export default class YearSelector extends Component {
 
   handleOnYearViewPrevious = () => {
     this.setState({
-      initialYear: parseInt(Math.max(this.state.initialYear - 25, 0))
+      initialYear: parseInt(Math.max(this.state.initialYear - 25, 0)),
     });
-  }
+  };
 
   handleOnYearViewNext = () => {
     this.setState({
-      initialYear: parseInt(this.state.initialYear + 25)
+      initialYear: parseInt(this.state.initialYear + 25),
     });
-  }
+  };
 
   render() {
     const {

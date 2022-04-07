@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function EmptyDay(props) {
   const { styles } = props;
-  return(
+  return (
     <View style={styles.dayWrapper}>
       <View style={styles.dayButton} />
     </View>
@@ -12,5 +12,5 @@ export default function EmptyDay(props) {
 }
 
 EmptyDay.propTypes = {
-  styles: PropTypes.shape({})
+  styles: PropTypes.shape({}),
 };

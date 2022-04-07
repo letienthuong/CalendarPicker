@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import Year from './Year';
 
-
 export default function YearsGridView(props) {
   const {
     intialYear,
@@ -15,7 +14,7 @@ export default function YearsGridView(props) {
     minDate,
     maxDate,
   } = props;
-  const guideArray = [ 0, 1, 2, 3, 4 ];
+  const guideArray = [0, 1, 2, 3, 4];
   let year = intialYear - 13; // center current year in grid
 
   function generateColumns() {
@@ -39,12 +38,11 @@ export default function YearsGridView(props) {
   }
   return (
     <View style={styles.yearsWrapper}>
-      { guideArray.map(index => (
+      {guideArray.map((index) => (
         <View key={year} style={styles.yearsRow}>
-          { generateColumns(index) }
+          {generateColumns(index)}
         </View>
-      ))
-      }
+      ))}
     </View>
   );
 }

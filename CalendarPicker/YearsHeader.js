@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Platform,
-} from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { stylePropType } from './localPropTypes';
 import Controls from './Controls';
@@ -28,8 +24,8 @@ export default function YearsHeader(props) {
     headingLevel,
   } = props;
 
-  const disablePrevious = restrictNavigation && minDate && (minDate.year() >= year);
-  const disableNext = restrictNavigation && maxDate && (maxDate.year() <= year);
+  const disablePrevious = restrictNavigation && minDate && minDate.year() >= year;
+  const disableNext = restrictNavigation && maxDate && maxDate.year() <= year;
 
   const accessibilityProps = { accessibilityRole: 'header' };
   if (Platform.OS === 'web') {
@@ -47,7 +43,7 @@ export default function YearsHeader(props) {
         textStyles={[styles.navButtonText, textStyle, previousTitleStyle]}
       />
       <Text style={[styles.yearsHeaderText, textStyle]} {...accessibilityProps}>
-        { title }
+        {title}
       </Text>
       <Controls
         disabled={disableNext}

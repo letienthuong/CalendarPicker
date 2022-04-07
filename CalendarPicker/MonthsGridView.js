@@ -3,23 +3,14 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import Month from './Month';
 
-
 export default function MonthsGridView(props) {
-  const {
-    currentYear,
-    months,
-    styles,
-    onSelectMonth,
-    textStyle,
-    minDate,
-    maxDate,
-  } = props;
+  const { currentYear, months, styles, onSelectMonth, textStyle, minDate, maxDate } = props;
   const _months = Array.from(Array(12).keys());
-  const columnArray = [ 0, 1, 2 ];
-  const rowArray = [ 0, 1, 2, 3 ];
+  const columnArray = [0, 1, 2];
+  const rowArray = [0, 1, 2, 3];
 
   function generateColumns() {
-    const column = columnArray.map(index => {
+    const column = columnArray.map((index) => {
       const currentMonth = _months.shift();
       return (
         <Month
@@ -40,12 +31,11 @@ export default function MonthsGridView(props) {
 
   return (
     <View style={styles.monthsWrapper}>
-      { rowArray.map(index => (
+      {rowArray.map((index) => (
         <View key={index} style={styles.monthsRow}>
-          { generateColumns() }
+          {generateColumns()}
         </View>
-      ))
-      }
+      ))}
     </View>
   );
 }

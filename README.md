@@ -11,13 +11,14 @@ The `scrollable` prop was introduced in 7.0.0 and features a bi-directional infi
 ![alt tag](https://user-images.githubusercontent.com/6295083/82028634-87a2b880-965b-11ea-90ce-1bde67f31157.gif)
 
 To use the calendar you just need to:
+
 ```sh
 npm install --save react-native-calendar-picker
 ```
 
 # Prerequisites
 
-CalendarPicker requires Moment JS >=2.0.  Date props may be anything parseable by Moment: Javascript Date, Moment date, or ISO8601 datetime string.
+CalendarPicker requires Moment JS >=2.0. Date props may be anything parseable by Moment: Javascript Date, Moment date, or ISO8601 datetime string.
 
 ```
 npm install --save moment
@@ -27,11 +28,7 @@ npm install --save moment
 
 ```js
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 
 export default class App extends Component {
@@ -53,12 +50,10 @@ export default class App extends Component {
     const startDate = selectedStartDate ? selectedStartDate.toString() : '';
     return (
       <View style={styles.container}>
-        <CalendarPicker
-          onDateChange={this.onDateChange}
-        />
+        <CalendarPicker onDateChange={this.onDateChange} />
 
         <View>
-          <Text>SELECTED DATE:{ startDate }</Text>
+          <Text>SELECTED DATE:{startDate}</Text>
         </View>
       </View>
     );
@@ -73,9 +68,11 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
 ## CalendarPicker Props
+
 | Prop                                 | Type                  | Description                                                                                                                                                                                                                                                                                                                                                     |
-|:-------------------------------------|:----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :----------------------------------- | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`weekdays`**                       | `Array`               | Optional. List of week days. Eg. `['Mon', 'Tue', ...]` Must be 7 days                                                                                                                                                                                                                                                                                           |
 | **`months`**                         | `Array`               | Optional. List of months names. Eg. `['Jan', 'Feb', ...]` Must be 12 months                                                                                                                                                                                                                                                                                     |
 | **`firstDay`**                       | `Number`              | Optional. Default first day of week will be Sunday. You can set start of week with number from `0` to `6`. Default is `0` or Sunday                                                                                                                                                                                                                             |
@@ -138,7 +135,9 @@ const styles = StyleSheet.create({
 | **`yearTitleStyle`**                 | `TextStyle`           | Optional. Text styling for header's year text.                                                                                                                                                                                                                                                                                                                  |
 
 # Styles
+
 Some styles will overwrite some won't. For instance:
+
 - If you provide textStyle with fontFamily and color, out of ranges dates will not apply your color, just fontFamily.
 
 Order of precedence:
@@ -151,14 +150,12 @@ Order of precedence:
 # More Examples
 
 ### Start from Monday, allowRangeSelection, Min and Max Dates and Styles Changes Example
+
 ![alt tag](https://user-images.githubusercontent.com/6295083/82028654-8f625d00-965b-11ea-8076-45ae609be296.gif)
+
 ```js
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 
 export default class App extends Component {
@@ -188,7 +185,7 @@ export default class App extends Component {
     const { selectedStartDate, selectedEndDate } = this.state;
     const minDate = new Date(); // Today
     const maxDate = new Date(2017, 6, 3);
-    const startDate  =  selectedStartDate ? selectedStartDate.toString() : '';
+    const startDate = selectedStartDate ? selectedStartDate.toString() : '';
     const endDate = selectedEndDate ? selectedEndDate.toString() : '';
 
     return (
@@ -205,8 +202,8 @@ export default class App extends Component {
         />
 
         <View>
-          <Text>SELECTED START DATE:{ startDate }</Text>
-          <Text>SELECTED END DATE:{ endDate }</Text>
+          <Text>SELECTED START DATE:{startDate}</Text>
+          <Text>SELECTED END DATE:{endDate}</Text>
         </View>
       </View>
     );
@@ -228,11 +225,7 @@ const styles = StyleSheet.create({
 
 ```js
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import CalendarPicker from 'react-native-calendar-picker';
 
 export default class App extends Component {
@@ -262,7 +255,7 @@ export default class App extends Component {
     const { selectedStartDate, selectedEndDate } = this.state;
     const minDate = new Date(); // Today
     const maxDate = new Date(2017, 6, 3);
-    const startDate  =  selectedStartDate ? selectedStartDate.toString() : '';
+    const startDate = selectedStartDate ? selectedStartDate.toString() : '';
     const endDate = selectedEndDate ? selectedEndDate.toString() : '';
 
     return (
@@ -273,7 +266,20 @@ export default class App extends Component {
           minDate={minDate}
           maxDate={maxDate}
           weekdays={['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab', 'Dom']}
-          months={['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']}
+          months={[
+            'Janeiro',
+            'Fevereiro',
+            'Março',
+            'Abril',
+            'Maio',
+            'Junho',
+            'Julho',
+            'Agosto',
+            'Setembro',
+            'Outubro',
+            'Novembro',
+            'Dezembro',
+          ]}
           previousTitle="Anterior"
           nextTitle="Próximo"
           todayBackgroundColor="#e6ffe6"
@@ -288,8 +294,8 @@ export default class App extends Component {
         />
 
         <View>
-          <Text>SELECTED START DATE:{ startDate }</Text>
-          <Text>SELECTED END DATE:{ endDate }</Text>
+          <Text>SELECTED START DATE:{startDate}</Text>
+          <Text>SELECTED END DATE:{endDate}</Text>
         </View>
       </View>
     );
@@ -304,7 +310,6 @@ const styles = StyleSheet.create({
   },
 });
 ```
-
 
 ### Custom styling individual dates
 
@@ -391,7 +396,7 @@ const customDatesStylesCallback = date => {
 These internal methods may be accessed through a ref to the CalendarPicker.
 
 | Name                        | Params                          | Description                                                                                                                                                            |
-|:----------------------------|:--------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :-------------------------- | :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **`handleOnPressDay`**      | `{year, month, day} (Integers)` | Programmatically select date. `year`, `month` and `day` are numbers. `day` is the day of the current month. Moment example for today's day of month: `moment().date()` |
 | **`handleOnPressNext`**     |                                 | Programmatically advance to next month.                                                                                                                                |
 | **`handleOnPressPrevious`** |                                 | Programmatically advance to previous month.                                                                                                                            |
@@ -400,10 +405,10 @@ These internal methods may be accessed through a ref to the CalendarPicker.
 ## TypeScript
 
 Definitions are available at https://www.npmjs.com/package/@types/react-native-calendar-picker courtesy of [automatensalat](https://github.com/automatensalat).
+
 ```
 npm install --save @types/react-native-calendar-picker
 ```
-
 
 # Suggestions?
 
@@ -422,10 +427,10 @@ I would like to call out some contributors who have been helping with this proje
 - [adamkrell](https://github.com/adamkrell)
 - [joshuapinter](https://github.com/joshuapinter)
 
-
 # Sample Application
 
 The sample app is an Expo project created with `create-react-native-app`.
+
 ```sh
 cd example
 npm run cp
@@ -435,4 +440,4 @@ npm start
 
 ## Development
 
-The source files are copied from the project root directory into `example` using `npm run cp`.  If a source file is modified, it must be copied over again with `npm run cp`.
+The source files are copied from the project root directory into `example` using `npm run cp`. If a source file is modified, it must be copied over again with `npm run cp`.
