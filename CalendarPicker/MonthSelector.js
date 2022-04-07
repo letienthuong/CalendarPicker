@@ -24,6 +24,7 @@ export default class MonthSelector extends Component {
       minDate,
       maxDate,
       onSelectMonth,
+      onCancel,
     } = this.props;
 
     return (
@@ -33,6 +34,7 @@ export default class MonthSelector extends Component {
           textStyle={textStyle}
           title={title + currentYear}
           headingLevel={headingLevel}
+          onCancel={onCancel}
         />
         <MonthsGridView
           styles={styles}

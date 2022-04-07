@@ -1,5 +1,5 @@
 {
-  "name": "react-native-calendar-picker",
+  "name": "calendar-picker",
   "version": "7.1.2",
   "description": "Calendar Picker Component for React Native",
   "engines": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephy/CalendarPicker"
+    "url": "https://github.com/letienthuong/CalendarPicker"
   },
   "keywords": [
     "calendar",
@@ -50,6 +50,7 @@
   "dependencies": {
     "node-git-hooks": "^1.0.1",
     "prop-types": "^15.6.0",
+    "react-native-swipe-gestures": "^1.0.5",
     "recyclerlistview": "^3.0.0"
   },
   "devDependencies": {
