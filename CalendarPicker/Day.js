@@ -155,7 +155,6 @@ export default function Day(props) {
       if (selectedStartDate && selectedEndDate) {
         // Apply style for start date
         if (isThisDaySameAsSelectedStart) {
-          console.log(1);
           computedSelectedDayStyle = [
             styles.startDayWrapper,
             selectedRangeStyle,
@@ -205,7 +204,6 @@ export default function Day(props) {
       }
       // Apply style if start date has been selected but end date has not
       if (selectedStartDate && !selectedEndDate && isThisDaySameAsSelectedStart) {
-        console.log(2);
         computedSelectedDayStyle = [
           styles.startDayWrapper,
           selectedRangeStyle,

@@ -10,7 +10,7 @@ export default function MonthsGridView(props) {
   const rowArray = [0, 1, 2, 3];
 
   function generateColumns() {
-    const column = columnArray.map((index) => {
+    return columnArray.map((index) => {
       const currentMonth = _months.shift();
       return (
         <Month
@@ -26,7 +26,6 @@ export default function MonthsGridView(props) {
         />
       );
     });
-    return column;
   }
 
   return (
