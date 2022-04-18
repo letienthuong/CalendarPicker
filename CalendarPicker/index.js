@@ -10,7 +10,7 @@ import YearSelector from './YearSelector';
 import Scroller from './Scroller';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import moment from 'moment';
-import StaticRange from 'src/components/DateRangePicker/StaticRange';
+import StaticRange from './StaticPicker';
 import 'moment/locale/vi';
 
 moment.locale('vi');
