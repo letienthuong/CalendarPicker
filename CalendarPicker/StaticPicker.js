@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { getStaticRanges } from './utils';
+import { getStaticRanges } from './Utils';
 
 function StaticPicker({ firstDate, secondDate, onPressStaticButton }) {
   const onPress = (range) => {
