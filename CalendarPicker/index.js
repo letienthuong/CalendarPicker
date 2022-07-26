@@ -64,7 +64,7 @@ export default class CalendarPicker extends Component {
 
     if (moment(selectedStartDate).isValid() && moment(selectedEndDate).isValid()) {
       this.handleOnSelectMonthYear({
-        month: parseInt(moment(selectedStartDate).format('M')),
+        month: parseInt(moment(selectedStartDate).format('M')) - 1,
         year: parseInt(moment(selectedEndDate).format('YYYY')),
       });
     }
